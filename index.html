@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>SmartScan admin tool</title>
+    <link rel="icon" href="favicon.ico"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EnSpectr pharm-server remote administration tool">
+    <link href="css/pharm_adm.css" rel="stylesheet">
+  </head>
+<body>
+  <table>
+  <tr><td><span id="status"></span><button type="button" id="bt-btn"></button></td></tr>
+  <tr>
+    <td>
+      <div class="select-container">
+        <select id="select-cmd" disabled="true">
+          <option value="" id="opt-select-cmd-empty"></option>
+        </select>
+        <select id="select-log" disabled="true">
+          <option value="" id="opt-select-log-empty"></option>
+        </select>
+      </div>
+    </td>
+  </tr>
+  
+  <tr><td><input type="text" id="cmd-arg1" disabled="true"/></td></tr>
+  <tr><td><input type="text" id="cmd-arg2" disabled="true"/></td></tr>
+  <tr><td><input type="text" id="cmd-arg3" disabled="true"/></td></tr>
+  <tr><td><textarea id="txt-res" rows="30" cols="92" disabled="true" readonly></textarea></td></tr>
+  </table>
+  <script src="js/ble_mx_api.js"></script>
+  <script src="js/pharm_adm.js"></script>
+</body>
+</html>

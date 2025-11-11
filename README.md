@@ -1,2 +1,2 @@
 # pharm-adm
-EnSpectr pharma server remote administration tool
+EnSpectr pharm-server remote administration tool
