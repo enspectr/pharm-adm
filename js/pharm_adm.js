@@ -62,6 +62,10 @@ const commands = {
 	'ifconfig' : {
 		name : !lang_ru ? 'Network configuration' : 'Конфигурация сети'
 	},
+	'timedatectl' : {
+		name : !lang_ru ? 'System time / date control' : 'Системное время / дата',
+		args : !lang_ru ? ['[request]', '[argument]'] : ['[запрос]', '[параметр]']
+	},
 	'update' : {
 		name : !lang_ru ? 'Update from the cloud' : 'Обновление из облака',
 	},
