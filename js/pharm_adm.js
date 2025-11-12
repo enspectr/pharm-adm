@@ -78,6 +78,13 @@ const commands = {
 	'ssh_en' : {
 		name : !lang_ru ? 'Enable remote access' : 'Включить удаленный доступ',
 	},
+	'wifi_conn' : {
+		name : !lang_ru ? 'Connect to WiFi' : 'Подключиться к WiFi',
+		args : !lang_ru ? ['[SSID]', '[PASSWD]'] : ['[имя сети]', '[пароль]']
+	},
+	'wifi_off' : {
+		name : !lang_ru ? 'Disconnect from WiFi' : 'Отключиться от WiFi',
+	},
 };
 
 // Text translations
