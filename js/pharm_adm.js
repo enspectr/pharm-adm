@@ -65,6 +65,15 @@ const commands = {
 	'update' : {
 		name : !lang_ru ? 'Update from the cloud' : 'Обновление из облака',
 	},
+	'mk_passwd' : {
+		name : !lang_ru ? 'Create new password' : 'Создать новый пароль',
+	},
+	'ssh_dis' : {
+		name : !lang_ru ? 'Disable remote access' : 'Отключить удаленный доступ',
+	},
+	'ssh_en' : {
+		name : !lang_ru ? 'Enable remote access' : 'Включить удаленный доступ',
+	},
 };
 
 // Text translations
