@@ -59,6 +59,16 @@ const commands = {
 		name : !lang_ru ? 'Top processes' : 'Детализация загрузки',
 		args : !lang_ru ? ['[the number of process]', '[more top options]'] : ['[количество процессов]', '[доп. опции]']
 	},
+	'wifi' : {
+		name : !lang_ru ? 'Connect / forget WiFi' : 'Подключить / забыть WiFi',
+		args : !lang_ru ? [
+			'network name | leave empty to forget',
+			'network password | leave empty to forget'
+		]  : [
+			'имя сети | оставить пустым, чтобы забыть',
+			'пароль сети | оставить пустым, чтобы забыть'
+		]
+	},
 	'ifconfig' : {
 		name : !lang_ru ? 'Network configuration' : 'Конфигурация сети'
 	},
@@ -77,13 +87,6 @@ const commands = {
 	},
 	'ssh_en' : {
 		name : !lang_ru ? 'Enable remote access' : 'Включить удаленный доступ',
-	},
-	'wifi_conn' : {
-		name : !lang_ru ? 'Connect to WiFi' : 'Подключиться к WiFi',
-		args : !lang_ru ? ['[SSID]', '[PASSWD]'] : ['[имя сети]', '[пароль]']
-	},
-	'wifi_off' : {
-		name : !lang_ru ? 'Disconnect from WiFi' : 'Отключиться от WiFi',
 	},
 };
 
