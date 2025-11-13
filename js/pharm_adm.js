@@ -30,12 +30,24 @@ const sel_cmd   = document.getElementById('select-cmd');
 const sel_log   = document.getElementById('select-log');
 const cmd_empty = document.getElementById('opt-select-cmd-empty');
 const log_empty = document.getElementById('opt-select-log-empty');
+const qrcode_el = document.getElementById('qrcode');
+const qrcode_o  = new QRCode(qrcode_el, {
+	colorDark  : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+});
 
 const ncmd_args = cmd_arg.length;
 
 let bt_conn = null;
 
 const commands = {
+	'key_admin' : {
+		name : !lang_ru ? 'Show access key for administrator' : 'Показать ключ доступа для администратора'
+	},
+	'key_mgr' : {
+		name : !lang_ru ? 'Show access key for manager' : 'Показать ключ доступа для мэнеджера'
+	},
 	'uptime' : {
 		name : !lang_ru ? 'Running time' : 'Время работы'
 	},
@@ -348,19 +360,31 @@ function handle_log_list(o)
 
 function handle_cmd_resp(o)
 {
-	if (o['out']) {
-		txt_res.textContent = o['out'];
+	const out = o['out'];
+	const ret = o['ret'];
+	var resp = out;
+	const qrcode_prefix = 'qrcode=';
+	if (!ret && out.startsWith(qrcode_prefix) && out.length > qrcode_prefix.length) {
+		qrcode_o.clear();
+		qrcode_o.makeCode(out.slice(qrcode_prefix.length));
+		qrcode_el.classList.remove('hidden');
+		// resp = '';
+	} else {
+		qrcode_el.classList.add('hidden');
+	}
+	if (resp) {
+		txt_res.textContent = resp;
 		txt_res.classList.remove('empty-response');
 	} else
 		txt_res.classList.add('empty-response');
 	txt_res.placeholder = '';
-	if (o['ret']) {
+	if (ret) {
 		txt_res.classList.add('failed');
-		if (!o['out'])
+		if (!resp)
 			txt_res.textContent = tr.failed;
 	} else {
 		txt_res.classList.remove('failed');
-		if (!o['out'])
+		if (!resp)
 			txt_res.textContent = tr.done;
 	}
 	txt_res.disabled = false;

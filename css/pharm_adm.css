@@ -92,6 +92,11 @@ textarea {
 	min-width: 100%;
 }
 
+#qrcode {
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
 .hidden {
 	display: none;
 	visibility:hidden;
