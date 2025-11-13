@@ -43,10 +43,10 @@ let bt_conn = null;
 
 const commands = {
 	'key_admin' : {
-		name : !lang_ru ? 'Show access key for administrator' : 'Показать ключ доступа для администратора'
+		name : !lang_ru ? 'Show administrator access key' : 'Показать ключ доступа администратора'
 	},
 	'key_mgr' : {
-		name : !lang_ru ? 'Show access key for manager' : 'Показать ключ доступа для мэнеджера'
+		name : !lang_ru ? 'Show manager access key' : 'Показать ключ доступа мэнеджера'
 	},
 	'uptime' : {
 		name : !lang_ru ? 'Running time' : 'Время работы'
